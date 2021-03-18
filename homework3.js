@@ -4,7 +4,7 @@
 const fsPromises = require('fs/promises');
 async function start(){
     const data = await fsPromises.readFile('./input.txt');
-    await Promise.all([
+    Promise.all([
         fsPromises.writeFile('./output1.txt',data.toString().split("").slice(0,data.length/2).join("")),
         fsPromises.writeFile('./output2.txt',data.toString().split("").slice(data.length/2).join(""))
     ]);
