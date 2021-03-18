@@ -2,7 +2,7 @@
 // Օգտվել 'fs/promises' գրադարանից և օգտագործել async/await:
 
 const fsPromises = require('fs/promises');
-async function go(){
+async function start(){
     const data = await fsPromises.readFile('./input.txt');
     await Promise.all([
         fsPromises.writeFile('./output1.txt',data.toString().split("").slice(0,data.length/2).join("")),
@@ -10,4 +10,4 @@ async function go(){
     ]);
 }
 
-go();
+start();
