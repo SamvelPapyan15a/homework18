@@ -5,7 +5,7 @@ function randomNumbers(){
     return new Promise(function(resolve,reject) {
         let num = random.int(0,10);
         if(num < 5){
-            reject();
+            reject(new Error("Number is less than 5"));
         }
         resolve(num);
     });
@@ -14,7 +14,7 @@ for(let i = 0; i < 10; i++)
 {
     randomNumbers().then(function (num) {
         console.log(num);
-    }).catch(function () {
-        console.log("That number cannot be generated.");
+    }).catch(function (err) {
+        console.log(err.message);
     });
 }

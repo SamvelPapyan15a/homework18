@@ -17,6 +17,6 @@ const server = http.createServer(function(req,res){
    res.end('Homework 18');
 });
 
-server.listen(obj.port, function(){
+server.listen(obj.port, obj.host, function(){
     console.log(`${obj.host}:${obj.port}`);
 });
