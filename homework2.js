@@ -9,14 +9,13 @@
 
 const http = require('http');
 const fs = require('fs');
-const json = fs.readFileSync('./config.json');
-const obj = JSON.parse(json);
+const json = require('./config.json');
 
 const server = http.createServer(function(req,res){
    res.writeHead(200);
    res.end('Homework 18');
 });
 
-server.listen(obj.port, obj.host, function(){
-    console.log(`${obj.host}:${obj.port}`);
+server.listen(json.port, json.host, function(){
+    console.log(`${json.host}:${json.port}`);
 });
